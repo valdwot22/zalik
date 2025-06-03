@@ -9,8 +9,10 @@ def form_api():
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
-    # Тут можна додати перевірку логіна/пароля
-    return jsonify({'message': f'Вітаю, {email}!'})
+    if email and password:
+        return jsonify({'status': 'OK'})
+    else:
+        return jsonify({'status': 'fail'})
 
 if __name__ == '__main__':
     app.run(debug=True) 
