@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/login', methods=['POST'])
-def login():
+@app.route('/form-api', methods=['POST'])
+def form_api():
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
